@@ -1,0 +1,107 @@
+{
+  "east_texas": {
+    "date_label": "Tuesday, Nov 17, 2026",
+    "issued": "6:30 AM CST",
+    "chips": [
+      {"text": "No warnings", "kind": ""},
+      {"text": "Rural frost this AM", "kind": "cold"},
+      {"text": "Dry through Sat", "kind": ""}
+    ],
+    "hi": 65,
+    "lo": 40,
+    "headline": "Sunny and dry. Chilly start, mild afternoon.",
+    "summary": "A cold morning with frost in rural low spots gives way to a sunny afternoon in the mid 60s. Light east wind. Another clear night, a little milder than last night.",
+    "rain_note": "Rain chance 0% all day",
+    "hourly": [
+      {"time": "8 AM", "icon": "sun", "temp": 40, "sky": "Sunny", "wind": "NE 5 mph"},
+      {"time": "Noon", "icon": "sun", "temp": 62, "sky": "Sunny", "wind": "E 5 mph"},
+      {"time": "3 PM", "icon": "sun", "temp": 65, "sky": "Sunny", "wind": "E 5 mph"},
+      {"time": "6 PM", "icon": "moon", "temp": 55, "sky": "Clear", "wind": "Calm"},
+      {"time": "9 PM", "icon": "moon", "temp": 46, "sky": "Clear", "wind": "NE 5 mph"},
+      {"time": "6 AM Wed", "icon": "sun", "temp": 41, "sky": "Mostly sunny", "wind": "E 5 mph"}
+    ],
+    "days": [
+      {"day": "Wed", "icon": "sun", "hi": 69, "lo": 47, "text": "Sunny and warmer."},
+      {"day": "Thu", "icon": "sun", "hi": 73, "lo": 51, "text": "Mostly sunny. Above normal."},
+      {"day": "Fri–Sat", "icon": "pcloud", "temp_text": "Low 70s", "temp_kind": "h", "text": "Mild and dry, a bit more humid."},
+      {"day": "Sun", "icon": "pcloud", "temp_text": "60s", "temp_kind": "h", "text": "Weak front. A stray sprinkle at most, slightly cooler."},
+      {"day": "Mon–Tue", "icon": "rain", "temp_text": "Rain likely", "flag": true, "text": "Pattern change. Better odds of widespread rain and cooler air for Thanksgiving week."}
+    ],
+    "facts": [
+      {"k": "Severe storms", "v": "None", "p": "No risk this week"},
+      {"k": "Power", "v": "Normal", "p": "No notable outages in East Texas"},
+      {"k": "School closings", "v": "None", "p": "Nothing listed"},
+      {"k": "Freeze", "v": "Not expected", "p": "None in the next 7 days"}
+    ],
+    "panels": [
+      {"kicker": "Thanksgiving week", "title": "Wetter and cooler, but no Arctic air", "paras": [
+        "NWS Shreveport and Fort Worth both point to a pattern change early next week. A slow storm system over the Gulf Coast could bring a soaking rain Mon–Tue, then cooler days through the holiday. The Climate Prediction Center favors above-normal rain for Texas Nov 22–26.",
+        "Freezing nights look unlikely through the end of November."]},
+      {"kicker": "This winter", "title": "A strong El Niño is in charge", "paras": [
+        "El Niño is now strong and still strengthening, near +2.5°C in the key Pacific region. That usually means an active southern storm track, with more rain and more cool, cloudy days in East Texas.",
+        "It does not bring Arctic air on its own. Ice or snow still needs cold air from Canada, and Canada is running warm right now."]}
+    ],
+    "sources": "NWS Shreveport forecast and discussion, NWS Fort Worth, Storm Prediction Center, NOAA Climate Prediction Center, KLTV closings, PowerOutage.us."
+  },
+  "nm": {
+    "date_label": "Tuesday, Nov 17, 2026",
+    "issued": "6:30 AM MST",
+    "chips": [
+      {"text": "Snow tonight above 9,000 ft", "kind": "watch"},
+      {"text": "Slick passes early Wed", "kind": "watch"},
+      {"text": "Very cold Wed night", "kind": "cold"}
+    ],
+    "hero": [
+      {"style": "big-cold", "value": "10°", "label": "Angel Fire low|Wed night"},
+      {"style": "side", "value": "9,000 ft", "label": "Snow level|tonight"}
+    ],
+    "headline": "Snow showers tonight, then a very cold Wednesday night.",
+    "summary": "A weak storm brings rain and snow showers this evening into early Wednesday. NWS Albuquerque expects several inches above 9,000 ft in the northern Sangres and Tusas, with mostly rain in the valleys. Skies clear Wednesday, and the high valleys turn very cold that night.",
+    "town_cols": ["Today high", "Tonight low", "Wed high", "Wed night"],
+    "towns": [
+      {"name": "Red River", "elev": "8,650 ft", "d1_hi": 46, "n1_lo": 25, "pop": 90, "d2_hi": 39, "n2_lo": 19},
+      {"name": "Angel Fire", "elev": "8,400 ft", "d1_hi": 52, "n1_lo": 27, "pop": 80, "d2_hi": 44, "n2_lo": 10, "key": true},
+      {"name": "Questa", "elev": "7,500 ft", "d1_hi": 52, "n1_lo": 30, "pop": 90, "d2_hi": 46, "n2_lo": 25},
+      {"name": "Chama", "elev": "7,900 ft", "d1_hi": 49, "n1_lo": 28, "pop": 90, "d2_hi": 44, "n2_lo": 22},
+      {"name": "Taos", "elev": "6,970 ft", "d1_hi": 56, "n1_lo": 32, "pop": 70, "d2_hi": 50, "n2_lo": 20},
+      {"name": "Mora", "elev": "7,200 ft", "d1_hi": 58, "n1_lo": 32, "pop": 50, "d2_hi": 54, "n2_lo": 24},
+      {"name": "Pecos", "elev": "6,900 ft", "d1_hi": 56, "n1_lo": 34, "pop": 60, "d2_hi": 51, "n2_lo": 25},
+      {"name": "Los Alamos", "elev": "7,300 ft", "d1_hi": 52, "n1_lo": 35, "pop": 60, "d2_hi": 50, "n2_lo": 31}
+    ],
+    "days": [
+      {"day": "Tonight", "icon": "snow", "temp_text": "80–90%", "flag": true, "text": "Rain and snow showers. Several inches possible on peaks above 9,000 ft. Gusty southwest wind."},
+      {"day": "Wed", "icon": "sun", "temp_text": "Lows in teens", "temp_kind": "l", "text": "Sunny and cooler. Clear, calm and very cold at night in the high valleys."},
+      {"day": "Thu", "icon": "sun", "temp_text": "Dry", "text": "Sunny and milder."},
+      {"day": "Fri–Sat", "icon": "wind", "temp_text": "Light snow", "text": "Windy Friday. Some mountain snow Friday night into Saturday, mainly the Tusas."},
+      {"day": "Mon–Tue", "icon": "snow", "temp_text": "Watching", "flag": true, "text": "A quick storm with wider rain and mountain snow. Models agree it is coming. Amounts are still uncertain."}
+    ],
+    "snowpack": [
+      {"station": "Taos Powderhorn", "elev": "11,020 ft", "depth": "12 in", "swe": "2.7 in"},
+      {"station": "Gallegos Peak", "elev": "9,460 ft", "depth": "4 in", "swe": "1.0 in"},
+      {"station": "Palo", "elev": "9,330 ft", "depth": "1 in", "swe": "0.2 in"},
+      {"station": "Tolby", "elev": "10,210 ft", "depth": "0 in", "swe": "0.3 in"}
+    ],
+    "snow_note": "Last weekend's snow is still holding on north-facing high terrain. Most south and east slopes below 9,500 ft are patchy or bare.",
+    "ski_title": "Opening days",
+    "ski_col": "Opens",
+    "ski": [
+      {"name": "Sipapu", "status": "Fri, Nov 20", "key": true},
+      {"name": "Red River", "status": "~Nov 25"},
+      {"name": "Taos Ski Valley", "status": "~Nov 26"},
+      {"name": "Ski Santa Fe", "status": "~Nov 26"},
+      {"name": "Pajarito", "status": "~Dec 4"},
+      {"name": "Angel Fire", "status": "~Dec 11"}
+    ],
+    "ski_note": "Sipapu is making snow and reports a 5 in. base, which includes man-made snow. Dates with ~ are projected and may change.",
+    "panels": [
+      {"kicker": "Moreno Valley", "title": "Angel Fire could hit 10° Wednesday night", "paras": [
+        "Fresh snow, clear skies and calm wind let cold air pool in high basins like the Moreno Valley. Angel Fire is forecast near 10°F, and other sheltered valleys can run well below forecast too. Protect outdoor pipes and pets."]},
+      {"kicker": "Roads & fire", "title": "Mountain routes clear for now", "paras": [
+        "NMRoads shows no closures or difficult conditions on NM-518, US-64, NM-434, NM-75, NM-38 or I-25 near Las Vegas as of this morning. Watch for slick spots on the passes early Wednesday.",
+        "No critical fire weather is expected for at least 7 days."]},
+      {"kicker": "This winter", "title": "Strong El Niño favors a snowier season", "paras": [
+        "El Niño is strong and still strengthening. It usually sends more storms across the southern Rockies, which improves the odds for snowfall in the northern New Mexico mountains. It doesn't guarantee a big season, but the odds lean our way."]}
+    ],
+    "sources": "NWS Albuquerque forecast and discussion, NRCS SNOTEL, NMRoads, Sipapu snow report, OnTheSnow projected openings, NOAA Climate Prediction Center."
+  }
+}
