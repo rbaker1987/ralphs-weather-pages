@@ -201,18 +201,36 @@ def nm(d):
                  f'<td class="num"><span class="l">{e(str(t["n2_lo"]))}°</span></td>']
         rows.append(("key" if t.get("key") else "", cells))
     b.append(f'''  <section aria-label="Town forecasts">
-    <div class="sec-h"><h3>Mountain towns</h3><span>NWS Albuquerque</span></div>
+    <div class="sec-h"><h3>{e(d.get("town_title", "Mountain towns"))}</h3><span>NWS Albuquerque</span></div>
 {table([("Town", ""), (c[0], "hide-sm"), (c[1], ""), ("Precip", ""), (c[2], "hide-sm"), (c[3], "")], rows).replace(chr(10) + "    ", chr(10) + "    ")}
   </section>''')
     b.append(days(d["days"], "The week ahead", "Northern mountains"))
-    snow = table([("Station", ""), ("Depth", ""), ("Water", "")],
-                 [("", [f'<td>{e(s["station"])}<span class="el">{e(s["elev"])}</span></td>',
-                        f'<td class="num">{e(s["depth"])}</td>', f'<td class="num">{e(s["swe"])}</td>']) for s in d["snowpack"]])
-    ski = table([("Resort", ""), (d.get("ski_col", "Opens"), "")],
-                [("key" if s.get("key") else "", [f'<td>{e(s["name"])}</td>', f'<td class="num">{e(s["status"])}</td>']) for s in d["ski"]])
-    sp = {"kicker": "Snowpack", "title": "Snow on the ground (SNOTEL)", "paras": [d["snow_note"]], "_html": "\n" + snow.replace("\n    ", "\n      ")}
-    sk = {"kicker": "Ski areas", "title": d.get("ski_title", "Opening days"), "paras": [d["ski_note"]], "_html": "\n" + ski.replace("\n    ", "\n      ")}
-    b.append(panels([sp, sk] + d["panels"]))
+    extra = []
+    if d.get("snowpack"):
+        snow = table([("Station", ""), ("Depth", ""), ("Water", "")],
+                     [("", [f'<td>{e(s["station"])}<span class="el">{e(s["elev"])}</span></td>',
+                            f'<td class="num">{e(s["depth"])}</td>', f'<td class="num">{e(s["swe"])}</td>']) for s in d["snowpack"]])
+        extra.append({"kicker": "Snowpack", "title": "Snow on the ground (SNOTEL)", "paras": [d.get("snow_note", "")] if d.get("snow_note") else [], "_html": "\n" + snow.replace("\n    ", "\n      ")})
+    if d.get("ski"):
+        ski = table([("Resort", ""), (d.get("ski_col", "Opens"), "")],
+                    [("key" if s.get("key") else "", [f'<td>{e(s["name"])}</td>', f'<td class="num">{e(s["status"])}</td>']) for s in d["ski"]])
+        extra.append({"kicker": "Ski areas", "title": d.get("ski_title", "Opening days"), "paras": [d["ski_note"]] if d.get("ski_note") else [], "_html": "\n" + ski.replace("\n    ", "\n      ")})
+    # generic tables, e.g. summer "Peak weather", "Fire", "Trail conditions":
+    # {"kicker","title","cols":[...],"rows":[[cell,...],...],"key_rows":[i,...],"note"}
+    for t in d.get("tables", []):
+        cols = [(h, "") for h in t["cols"]]
+        rows = []
+        for n, row in enumerate(t["rows"]):
+            cells = []
+            for c, v in enumerate(row):
+                if c == 0 and isinstance(v, dict):
+                    cells.append(f'<td>{e(v["name"])}<span class="el">{e(v.get("sub", ""))}</span></td>')
+                else:
+                    cells.append(f'<td>{e(str(v))}</td>' if c == 0 else f'<td class="num">{e(str(v))}</td>')
+            rows.append(("key" if n in t.get("key_rows", []) else "", cells))
+        tb = table(cols, rows)
+        extra.append({"kicker": t["kicker"], "title": t["title"], "paras": [t["note"]] if t.get("note") else [], "_html": "\n" + tb.replace("\n    ", "\n      ")})
+    b.append(panels(extra + d["panels"]))
     b.append(footer([{"text": "Official alerts: NWS Albuquerque", "url": "https://www.weather.gov/abq/"},
                      {"text": "Road conditions: NMRoads", "url": "https://www.nmroads.com"},
                      {"text": "NM Mountains Weather on Facebook", "url": "https://www.facebook.com/jicaritapeak/"}], d["sources"]))
