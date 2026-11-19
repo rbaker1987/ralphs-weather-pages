@@ -10,8 +10,9 @@ from html import escape as e
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
-         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600'
-         '&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">')
+         '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700'
+         '&family=Space+Grotesk:wght@500;600;700&display=swap">\n'
+         '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">')
 SPRITE = '''<svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="sun" viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="currentColor"/><g stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"><path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M6.8 25.2l2.8-2.8M22.4 9.6l2.8-2.8"/></g></symbol>
   <symbol id="moon" viewBox="0 0 32 32"><path d="M20.5 4.5A11.5 11.5 0 1 0 27.5 21 9 9 0 0 1 20.5 4.5z" fill="currentColor"/></symbol>
@@ -24,6 +25,25 @@ SPRITE = '''<svg width="0" height="0" style="position:absolute" aria-hidden="tru
   <symbol id="wind" viewBox="0 0 32 32"><g stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none"><path d="M4 12h15a4 4 0 1 0-4-4"/><path d="M4 18h21a4 4 0 1 1-4 4"/><path d="M4 24h9"/></g></symbol>
 </svg>'''
 ICONS = {"sun", "moon", "pcloud", "cloud", "rain", "storm", "snow", "fog", "wind"}
+
+
+def band(t):
+    """Main-app temperature color band class for a temperature in F."""
+    try:
+        t = int(round(float(t)))
+    except (TypeError, ValueError):
+        return ""
+    if t <= -1: return "tb--10"
+    if 30 <= t <= 32: return "tb-frz"
+    return "tb-%d" % min(110, (t // 10) * 10)
+
+
+def topbar(current):
+    links = [("../", "Home", "home", "fa-home"), ("../east-texas/", "East Texas", "et", "fa-cloud-sun"),
+             ("../nm-mountains/", "NM Mountains", "nm", "fa-mountain"), ("https://weather-1kz4.onrender.com/", "Full app", "app", "fa-chart-line")]
+    cur = ' aria-current="page"'
+    nav = "".join(f'<a href="{h}"{cur if k == current else ""}><i class="fas {i}" aria-hidden="true"></i>{t}</a>' for h, t, k, i in links)
+    return f'''<header class="topbar"><div class="topbar-in"><a href="../" aria-label="Ralph's Weather home"><img src="../assets/logo-mark.svg" alt="Ralph's Weather" width="300" height="60"></a><nav aria-label="Pages">{nav}</nav></div></header>'''
 
 
 def icon(name):
@@ -42,13 +62,15 @@ def head(title, desc, body, cls):
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
-<style>:root{{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}} body{{margin:0}} img{{max-width:100%}} [hidden]{{display:none!important}}</style>
+<link rel="icon" href="../assets/logo-favicon.svg" type="image/svg+xml">
+<style>:root{{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}} body{{margin:0}} img{{max-width:100%}} [hidden]{{display:none!important}}</style>
 {FONTS}
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 {SPRITE}
 <div class="page {cls}">
+{topbar(cls)}
 <main class="wrap">
 {body}
 </main>
@@ -167,7 +189,7 @@ def east_texas(d):
                {"style": "lo", "value": f'{d["lo"]}°', "label": d.get("lo_label", "Low tonight")}],
               d["headline"], d["summary"])]
     slots = "".join(
-        f'\n      <div class="slot"><span class="t">{e(h["time"])}</span>{icon(h["icon"])}<span class="deg">{e(str(h["temp"]))}°</span>'
+        f'\n      <div class="slot {band(h["temp"])}"><span class="t">{e(h["time"])}</span>{icon(h["icon"])}<span class="deg">{e(str(h["temp"]))}°</span>'
         f'<span class="d">{e(h["sky"])}</span><span class="w">{e(h["wind"])}</span></div>' for h in d["hourly"][:6])
     b.append(f'''  <section aria-label="Today hour by hour">
     <div class="sec-h"><h3>{e(d.get("hourly_title", "Today"))}</h3><span>{e(d["rain_note"])}</span></div>

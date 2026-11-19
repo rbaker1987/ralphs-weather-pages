@@ -1,147 +1,176 @@
-/* Layout: one column like a station readout — dated masthead, status chips, hero reading, hourly strip, then paired detail panels. */
+/* Styled to match the Ralph's Weather main app (weather_app/static/weather/css/style.css):
+   royal blue + gold palette, Manrope / Space Grotesk, soft gradient background,
+   white rounded cards with blue gradient headers, temperature-colored readouts. */
 :root{
-  --bg:#eef2f0; --surface:#ffffff; --ink:#16201b; --muted:#56635d; --line:#d6ddd9;
-  --accent:#23704f; --accent-soft:#e1efe8; --warm:#b4530a; --cold:#2459c9; --ok:#2f7d4f; --watch:#a16207;
-  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
-  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --data:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --weather-primary:#4169e1; --weather-accent:#ffd700; --weather-accent-dark:#ffa500;
+  --weather-info:#17a2b8; --weather-secondary:#6c757d; --weather-ink:#1f2a44;
+  --weather-surface:#ffffff; --weather-surface-alt:#f3f6ff; --weather-bg:#eef2ff; --weather-bg-2:#f8f3ff;
+  --line:#dfe5f3; --muted:#5d6782; --warm:#d9480f; --cold:#2f5bd3; --ok:#28a745; --watch:#e0a800;
+  --accent:var(--weather-primary); --accent-soft:#fff6cc;
+  --grad:linear-gradient(135deg,var(--weather-primary),var(--weather-info));
+  --shadow:0 2px 4px rgba(0,0,0,.1); --shadow-hi:0 4px 12px rgba(0,0,0,.18);
+  --display:"Space Grotesk","Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  --body:"Manrope","Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+  --data:"Space Grotesk","Segoe UI",Tahoma,sans-serif;
+  color-scheme:light;
 }
-.nm{ --bg:#edf1f5; --line:#d4dce5; --muted:#55606d; --accent:#2f5f8c; --accent-soft:#e0eaf4; }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){ --bg:#0e1412; --surface:#151d1a; --ink:#e5ebe8; --muted:#9aa8a1; --line:#2a3631; --accent:#62c194; --accent-soft:#1a2d25; --warm:#f2a65e; --cold:#86b4ff; --ok:#6fcf97; --watch:#e9b949; color-scheme:dark }
-  :root:not([data-theme="light"]) .nm{ --bg:#0e1218; --surface:#151b23; --line:#283240; --muted:#98a4b3; --accent:#83b5e6; --accent-soft:#1a2636 }
-}
-:root[data-theme="dark"]{ --bg:#0e1412; --surface:#151d1a; --ink:#e5ebe8; --muted:#9aa8a1; --line:#2a3631; --accent:#62c194; --accent-soft:#1a2d25; --warm:#f2a65e; --cold:#86b4ff; --ok:#6fcf97; --watch:#e9b949; color-scheme:dark }
-:root[data-theme="dark"] .nm{ --bg:#0e1218; --surface:#151b23; --line:#283240; --muted:#98a4b3; --accent:#83b5e6; --accent-soft:#1a2636 }
-
-body{ background:var(--bg); color:var(--ink); font-family:var(--body); font-size:15px; line-height:1.5 }
-.page{ background:var(--bg); min-height:100%; }
-.wrap{ max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); padding-block:20px 40px; display:flex; flex-direction:column; gap:20px }
-h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:.01em; text-wrap:balance; margin:0; line-height:1.1 }
+html{ background:#f8f3ff }
+body{ font-family:var(--body); color:var(--weather-ink); font-size:15px; line-height:1.5;
+  background:radial-gradient(1200px 600px at -10% -20%,#dbe7ff 0%,transparent 60%),
+    radial-gradient(900px 500px at 110% -10%,#ffe7c2 0%,transparent 55%),
+    linear-gradient(180deg,var(--weather-bg) 0%,var(--weather-bg-2) 100%); background-attachment:fixed; min-height:100vh }
+.page{ min-height:100% }
+h1,h2,h3{ font-family:var(--display); font-weight:700; letter-spacing:-.01em; text-wrap:balance; margin:0; line-height:1.1 }
 p{ margin:0 }
-a{ color:var(--accent) }
-a:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; border-radius:4px }
+a{ color:var(--weather-primary); text-decoration:none; transition:color .2s ease }
+a:hover{ color:var(--weather-accent-dark) }
+a:focus-visible{ outline:2px solid var(--weather-accent); outline-offset:2px; border-radius:4px }
 .num{ font-family:var(--data); font-variant-numeric:tabular-nums }
 
-/* masthead + date line */
-.mast{ display:flex; flex-direction:column; gap:10px; border-bottom:2px solid var(--ink); padding-bottom:12px }
+/* top bar = the main app's navbar (solid royal blue, logo at 60px, faded white links with icons) */
+.topbar{ background:var(--weather-primary) }
+.topbar-in{ max-width:1120px; margin:0 auto; padding:13px max(16px,env(safe-area-inset-left,0px)); display:flex; align-items:center; gap:8px 28px; flex-wrap:wrap }
+.topbar img{ height:60px; width:auto; display:block }
+.topbar nav{ display:flex; gap:2px 6px; flex-wrap:wrap }
+.topbar nav a{ color:rgba(255,255,255,.55); font-family:var(--body); font-weight:400; font-size:16px; padding:8px; min-height:44px; display:inline-flex; align-items:center; gap:5px }
+.topbar nav a i{ font-size:.95em }
+.topbar nav a:hover,.topbar nav a:focus{ color:var(--weather-accent) }
+.topbar nav a[aria-current="page"]{ color:#fff }
+
+.wrap{ max-width:1120px; margin:0 auto; padding-left:max(16px,env(safe-area-inset-left,0px)); padding-right:max(16px,env(safe-area-inset-right,0px)); padding-block:22px 40px; display:flex; flex-direction:column; gap:20px }
+
+/* page header */
+.mast{ display:flex; flex-direction:column; gap:10px }
 .mast-top{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:6px 16px }
-.brand{ font-family:var(--display); font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent) }
-.mast h1{ font-size:clamp(30px,6vw,46px) }
+.brand{ font-family:var(--display); font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--weather-accent-dark) }
+.mast h1{ font-size:clamp(30px,6vw,44px); color:var(--weather-primary) }
 .area{ font-size:14px; color:var(--muted) }
-.when{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px }
-.when b{ font-family:var(--display); font-size:21px; font-weight:600 }
+.when{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding-bottom:12px; border-bottom:3px solid var(--weather-accent) }
+.when b{ font-family:var(--display); font-size:20px; font-weight:600 }
 .when span{ font-size:13.5px; color:var(--muted) }
 
 /* status chips */
 .status{ display:flex; flex-wrap:wrap; gap:8px; align-items:center }
-.chip{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; padding:4px 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); white-space:nowrap }
+.chip{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; padding:5px 12px; border-radius:25px; background:var(--weather-surface); box-shadow:var(--shadow); white-space:nowrap; font-family:var(--display) }
 .chip i{ width:8px; height:8px; border-radius:50%; background:var(--ok); flex:none }
-.chip.watch i{ background:var(--watch) }
-.chip.cold i{ background:var(--cold) }
+.chip.watch{ background:linear-gradient(45deg,#ffc107,#fd7e14); color:#2b2100 } .chip.watch i{ background:#fff }
+.chip.cold{ background:linear-gradient(45deg,#17a2b8,#007bff); color:#fff } .chip.cold i{ background:#fff }
 
 /* hero */
-.hero{ display:grid; grid-template-columns:auto 1fr; gap:20px 36px; align-items:center }
-.reading{ display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 18px; font-family:var(--display); line-height:.9 }
-.reading .hi{ font-size:clamp(64px,13vw,104px); color:var(--warm); font-weight:600 }
-.reading .lo{ font-size:clamp(34px,7vw,52px); color:var(--cold); font-weight:600 }
-.reading .big-cold{ font-size:clamp(64px,13vw,104px); color:var(--cold); font-weight:600 }
-.reading .side{ font-size:clamp(30px,6vw,42px); color:var(--accent); font-weight:600 }
-.reading small{ display:block; font-family:var(--body); font-size:12.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.3 }
-.hero h2{ font-size:clamp(24px,4.4vw,32px); margin-bottom:8px }
+.hero{ display:grid; grid-template-columns:auto 1fr; gap:20px 32px; align-items:center; background:var(--weather-surface); border-radius:15px; box-shadow:0 4px 6px rgba(0,0,0,.1); padding:20px 22px }
+.reading{ display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 20px; font-family:var(--display); line-height:.9 }
+.reading .hi{ font-size:clamp(60px,12vw,96px); color:var(--warm); font-weight:700 }
+.reading .lo{ font-size:clamp(34px,7vw,50px); color:var(--cold); font-weight:700 }
+.reading .big-cold{ font-size:clamp(60px,12vw,96px); color:var(--cold); font-weight:700 }
+.reading .side{ font-size:clamp(30px,6vw,40px); color:var(--weather-primary); font-weight:700 }
+.reading small{ display:block; font-family:var(--body); font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-top:6px; line-height:1.3 }
+.hero h2{ font-size:clamp(22px,4.2vw,30px); margin-bottom:8px }
 .hero p{ color:var(--muted); max-width:62ch }
 .hero > div{ min-width:0 }
 
 /* section heads */
 .sec-h{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:10px }
-.sec-h h3{ font-size:20px; text-transform:uppercase; letter-spacing:.06em }
+.sec-h h3{ font-size:19px; color:var(--weather-primary) }
 .sec-h span{ font-size:13px; color:var(--muted) }
 
-/* hourly strip */
-.strip{ display:grid; grid-template-columns:repeat(6,1fr); border:1px solid var(--line); background:var(--surface); border-radius:10px; overflow:hidden }
-.slot{ padding:12px 10px 14px; display:flex; flex-direction:column; align-items:center; gap:4px; border-left:1px solid var(--line); text-align:center }
-.slot:first-child{ border-left:0 }
-.slot .t{ font-size:12.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--muted) }
-.slot svg{ width:30px; height:30px; color:var(--accent) }
-.slot .deg{ font-family:var(--display); font-size:30px; font-weight:600; line-height:1 }
-.slot .w{ font-family:var(--data); font-size:12.5px; color:var(--muted) }
-.slot .d{ font-size:13px }
+/* hourly cards (temperature-colored like the main app) */
+.strip{ display:grid; grid-template-columns:repeat(6,1fr); gap:10px }
+.slot{ padding:12px 8px 14px; display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center; border-radius:10px; box-shadow:var(--shadow); background:var(--weather-surface); transition:transform .3s ease, box-shadow .3s ease }
+.slot:hover{ transform:translateY(-3px); box-shadow:var(--shadow-hi) }
+.slot .t{ font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; opacity:.85; font-family:var(--display) }
+.slot svg{ width:30px; height:30px; color:currentColor }
+.slot .deg{ font-family:var(--display); font-size:30px; font-weight:700; line-height:1 }
+.slot .w{ font-size:12px; opacity:.85 }
+.slot .d{ font-size:13px; font-weight:600 }
+.tb--10{ background:linear-gradient(135deg,#0f0f3d 0%,#000 100%); color:#fff }
+.tb-0{ background:linear-gradient(135deg,#191970 0%,#0f0f3d 100%); color:#fff }
+.tb-10{ background:linear-gradient(135deg,#4169e1 0%,#191970 100%); color:#fff }
+.tb-20{ background:linear-gradient(135deg,#1e90ff 0%,#4169e1 100%); color:#fff }
+.tb-30{ background:linear-gradient(135deg,#00ced1 0%,#1e90ff 100%); color:#000 }
+.tb-frz{ background:linear-gradient(135deg,#00ced1 0%,#1e90ff 100%); color:#fff }
+.tb-40{ background:linear-gradient(135deg,#48d1cc 0%,#00ced1 100%); color:#000 }
+.tb-50{ background:linear-gradient(135deg,#66cdaa 0%,#48d1cc 100%); color:#000 }
+.tb-60{ background:linear-gradient(135deg,#bdb76b 0%,#9acd32 100%); color:#000 }
+.tb-70{ background:linear-gradient(135deg,#f0e68c 0%,#bdb76b 100%); color:#000 }
+.tb-80{ background:linear-gradient(135deg,#ffd700 0%,#ffa500 100%); color:#000 }
+.tb-90{ background:linear-gradient(135deg,#ffa500 0%,#ff6347 100%); color:#000 }
+.tb-100{ background:linear-gradient(135deg,#ff6347 0%,#ff4500 100%); color:#000 }
+.tb-110{ background:linear-gradient(135deg,#fff 0%,#fffacd 100%); color:#000 }
 
-/* outlook list: day | icon | temps | text */
-.days{ border:1px solid var(--line); background:var(--surface); border-radius:10px; overflow:hidden }
+/* outlook list */
+.days{ background:var(--weather-surface); border-radius:10px; overflow:hidden; box-shadow:var(--shadow) }
 .day{ display:grid; grid-template-columns:96px 34px 132px 1fr; gap:4px 14px; align-items:center; padding:11px 16px; border-top:1px solid var(--line) }
 .day:first-child{ border-top:0 }
-.day b{ white-space:nowrap; font-family:var(--display); font-size:19px; font-weight:600 }
-.day svg{ width:26px; height:26px; color:var(--accent) }
+.day b{ white-space:nowrap; font-family:var(--display); font-size:17px; font-weight:700; color:var(--weather-primary) }
+.day svg{ width:26px; height:26px; color:var(--weather-primary) }
 .day p{ font-size:14.5px; min-width:0 }
-.day .hl{ font-family:var(--data); font-size:14.5px; white-space:nowrap }
+.day .hl{ font-family:var(--data); font-size:15px; font-weight:600; white-space:nowrap }
 .day .hl .h{ color:var(--warm) } .day .hl .l{ color:var(--cold) }
-.day.flag{ background:var(--accent-soft) }
+.day.flag{ background:var(--accent-soft); box-shadow:inset 4px 0 0 var(--weather-accent) }
 
-/* panels */
+/* panels = main-app cards with gradient headers */
 .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
-.panel{ border:1px solid var(--line); background:var(--surface); border-radius:10px; padding:16px; display:flex; flex-direction:column; gap:10px; min-width:0 }
-.panel h3{ font-size:20px }
-.panel .k{ font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent) }
+.panel{ background:var(--weather-surface); border-radius:10px; box-shadow:0 4px 6px rgba(0,0,0,.1); padding:0 0 16px; display:flex; flex-direction:column; gap:10px; min-width:0; overflow:hidden }
+.panel > *{ margin-inline:16px }
+.panel > .k{ margin:0; padding:8px 16px; background:var(--grad); color:#fff; font-family:var(--display); font-size:clamp(1rem,.5vw + .9rem,1.15rem); font-weight:400; border-radius:10px 10px 0 0 }
+.panel h3{ font-size:19px }
 .panel p{ font-size:14.5px; max-width:68ch }
-.facts{ display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); background:var(--surface); border-radius:10px; overflow:hidden }
-.fact{ padding:12px 14px; border-left:1px solid var(--line); min-width:0 }
-.fact:first-child{ border-left:0 }
-.fact .k{ font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted) }
-.fact .v{ font-family:var(--display); font-size:22px; font-weight:600; margin-top:2px }
-.fact p{ font-size:13.5px; color:var(--muted) }
+.facts{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px }
+.fact{ padding:14px; min-width:0; border-radius:15px; color:#fff; background:linear-gradient(135deg,var(--weather-primary) 0%,#667eea 100%); box-shadow:0 4px 6px rgba(0,0,0,.1) }
+.fact .k{ font-size:11.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; opacity:.9 }
+.fact .v{ font-family:var(--display); font-size:22px; font-weight:700; margin-top:2px }
+.fact p{ font-size:13px; opacity:.92 }
 
-/* tables */
-.tbl{ overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--surface) }
+/* tables (main-app .table-weather) */
+.tbl{ overflow-x:auto; border-radius:10px; background:var(--weather-surface); box-shadow:var(--shadow) }
+.panel .tbl{ box-shadow:none; border:1px solid var(--line) }
 table{ border-collapse:collapse; width:100%; font-size:14.5px }
 th,td{ padding:9px 12px; text-align:right; white-space:nowrap; border-top:1px solid var(--line) }
-thead th{ border-top:0; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:600 }
+thead th{ border-top:0; background:var(--weather-primary); color:#fff; font-family:var(--display); font-size:12px; letter-spacing:.06em; text-transform:uppercase; font-weight:600 }
 th:first-child,td:first-child{ text-align:left }
 td.num{ font-family:var(--data) }
-td .h{ color:var(--warm) } td .l{ color:var(--cold) }
-td .el{ display:block; font-size:12.5px; color:var(--muted); font-family:var(--data) }
+td .h{ color:var(--warm); font-weight:600 } td .l{ color:var(--cold); font-weight:600 }
+td .el{ display:block; font-size:12px; color:var(--muted) }
 tr.key td{ background:var(--accent-soft) }
+tr.key td:first-child{ box-shadow:inset 4px 0 0 var(--weather-accent) }
 .meter{ display:inline-block; width:60px; height:8px; border-radius:4px; background:var(--line); vertical-align:middle; margin-right:8px; overflow:hidden }
-.meter i{ display:block; height:100%; border-radius:4px; background:var(--accent) }
+.meter i{ display:block; height:100%; border-radius:4px; background:var(--grad) }
 
 /* footer */
 .foot{ border-top:1px solid var(--line); padding-top:14px; font-size:13px; color:var(--muted); display:flex; flex-direction:column; gap:12px }
 .links{ display:flex; flex-wrap:wrap; gap:8px }
-.links a{ display:inline-flex; align-items:center; min-height:44px; padding:0 14px; border:1px solid var(--line); border-radius:8px; background:var(--surface); text-decoration:none; font-size:14px; font-weight:600 }
-.links a:hover{ border-color:var(--accent) }
+.links a{ display:inline-flex; align-items:center; min-height:44px; padding:0 18px; border-radius:25px; background:var(--grad); color:#fff; font-family:var(--display); font-size:14px; font-weight:600; transition:transform .3s ease, box-shadow .3s ease }
+.links a:hover{ color:#fff; transform:translateY(-2px); box-shadow:0 4px 8px rgba(255,215,0,.45) }
 
 @media (max-width:760px){
   .strip{ grid-template-columns:repeat(3,1fr) }
-  .slot:nth-child(4){ border-left:0 }
-  .slot:nth-child(n+4){ border-top:1px solid var(--line) }
   .grid2{ grid-template-columns:1fr }
   .facts{ grid-template-columns:1fr 1fr }
-  .fact:nth-child(3){ border-left:0 }
-  .fact:nth-child(n+3){ border-top:1px solid var(--line) }
 }
 @media (max-width:600px){
   .hide-sm{ display:none }
   th,td{ padding:9px 7px }
-  thead th{ white-space:normal; letter-spacing:.04em; line-height:1.25; vertical-align:bottom }
+  thead th{ white-space:normal; letter-spacing:.03em; line-height:1.25; vertical-align:bottom }
   td.num .meter{ display:none }
+  .topbar img{ height:40px }
+  .topbar nav a{ font-size:14px; padding:6px }
 }
 @media (max-width:520px){
-  .hero{ grid-template-columns:1fr; gap:14px }
-  .chip{ font-size:12.5px; padding:3px 9px; gap:5px }
-  .status{ gap:6px }
+  .hero{ grid-template-columns:1fr; gap:14px; padding:16px }
+  .chip{ font-size:12.5px; padding:4px 10px; gap:5px }
   .day{ grid-template-columns:80px 26px 1fr; padding:11px 14px }
-  .day b{ grid-column:1; grid-row:1 }
-  .day svg{ grid-column:2; grid-row:1 }
-  .day .hl{ grid-column:3; grid-row:1 }
-  .day p{ grid-column:3; grid-row:2 }
-  .when b{ font-size:19px }
+  .day b{ grid-column:1; grid-row:1 } .day svg{ grid-column:2; grid-row:1 }
+  .day .hl{ grid-column:3; grid-row:1 } .day p{ grid-column:3; grid-row:2 }
+  .when b{ font-size:18px }
+  .topbar-in{ gap:2px 12px; padding-block:8px }
 }
+@media (hover:none){ .slot:hover{ transform:none } }
 
 /* landing */
 .cards{ display:grid; grid-template-columns:1fr 1fr; gap:16px }
-.card{ display:flex; flex-direction:column; gap:8px; padding:20px; border:1px solid var(--line); border-radius:10px; background:var(--surface); text-decoration:none; color:var(--ink) }
-.card:hover{ border-color:var(--accent) }
-.card h2{ font-size:26px }
+.card{ display:flex; flex-direction:column; gap:8px; padding:20px; border-radius:10px; background:var(--weather-surface); box-shadow:var(--shadow); color:var(--weather-ink); border:2px solid transparent; transition:transform .3s ease, box-shadow .3s ease }
+.card:hover{ transform:translateY(-5px); box-shadow:var(--shadow-hi); border-color:var(--weather-accent); color:var(--weather-ink) }
+.card h2{ font-size:24px; color:var(--weather-primary) }
 .card p{ color:var(--muted) }
-.card .go{ font-weight:600; color:var(--accent) }
+.card .go{ font-weight:700; color:var(--weather-primary); font-family:var(--display) }
 @media (max-width:640px){ .cards{ grid-template-columns:1fr } }
