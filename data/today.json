@@ -394,48 +394,48 @@
               "name": "I-25 north",
               "sub": "Raton Pass – Las Vegas"
             },
-            "No weather issues. Right lane closures near Springer (MM 421–423) and on Raton Pass (MM 454–460)"
+            "No weather issues. Lane work near Springer and Raton Pass"
           ],
           [
             {
               "name": "I-25 central",
               "sub": "Las Vegas – Santa Fe – Albuquerque"
             },
-            "No weather issues. Right lane closed MM 317–320 south of Las Vegas and MM 302–303 north of Santa Fe; roadwork MM 278–290 through Santa Fe"
+            "No weather issues. Lane closures south of Las Vegas and north of Santa Fe"
           ],
           [
             {
               "name": "I-25 south",
               "sub": "Albuquerque – Las Cruces"
             },
-            "No weather issues. One lane each way MM 202–205 at Los Lunas, expect delays; nightly lane closures near the Big I; work near Hatch (MM 40–42) and Las Cruces"
+            "One lane each way at Los Lunas (MM 202–205). Expect delays"
           ],
           [
             {
               "name": "I-40 east",
               "sub": "Texas line – Clines Corners – Albuquerque"
             },
-            "No reported weather issues. Roadwork MM 216–218 near Clines Corners; Anton Chico eastbound rest area closed"
+            "No reported issues"
           ],
           [
             {
               "name": "I-40 west",
               "sub": "Albuquerque – Gallup – Arizona line"
             },
-            "No weather issues listed, though NWS expected a brief burst of snow along I-40 this morning. Shoulder work east of Gallup (MM 41–45) and right lane closed MM 63–64 at Prewitt"
+            "No weather issues. Shoulder work east of Gallup"
           ],
           [
             {
               "name": "Mountain highways",
               "sub": "NM-518, US-64, NM-434, NM-38, NM-75, NM-150, NM-68"
             },
-            "No reported issues. Road work on NM-434 MM 21–24 south of Black Lake. Today's snow showers may leave slick spots on passes"
+            "No reported issues. Road work on NM-434 near Black Lake"
           ]
         ],
         "key_rows": [
           2
         ],
-        "note": "No reported weather issues on the interstates. The snow-packed, icy roads this morning are in west-central New Mexico (NM-36, NM-117, NM-53). With single digits tonight, anything wet will refreeze; Raton and Glorieta passes are the first spots to ice up, so check nmroads.com before leaving."
+        "note": "No weather issues on the interstates. Tonight's single digits will refreeze anything wet, so check nmroads.com before leaving."
       }
     ]
   }
