@@ -1,26 +1,26 @@
 {
   "east_texas": {
     "date_label": "Tuesday, Nov 24, 2026",
-    "issued": "7:20 AM CST",
+    "issued": "7:20 AM CST · midday update 12:45 PM",
     "chips": [
       {
         "text": "No warnings",
         "kind": ""
       },
       {
-        "text": "Freeze likely Thu–Fri mornings",
-        "kind": "cold"
+        "text": "A few sleet pellets possible this afternoon",
+        "kind": "watch"
       },
       {
-        "text": "Upper 30s–low 40s at sunrise, no frost",
-        "kind": ""
+        "text": "Freeze Thu & Fri mornings, mid 20s in low spots",
+        "kind": "cold"
       }
     ],
     "hi": 51,
     "lo": 34,
-    "headline": "A cool, clouding-up Tuesday, then freezing mornings on Thanksgiving and Friday.",
-    "summary": "Personal weather stations showed upper 30s to low 40s across the area at sunrise, with no frost. Clouds thicken this afternoon and the high only reaches about 51 with a north wind near 10 mph. A quick disturbance tonight brings a slight chance of light rain, mainly south and east of Tyler, then sunny skies and lows near 31 Thursday and Friday mornings.",
-    "rain_note": "Mostly dry. NWS gives about a 10% chance of light rain this evening and overnight, mainly south and east of Tyler. Weather Underground leans a little wetter today, so a few sprinkles are possible. Not enough to help the drought.",
+    "headline": "Sleet is mixing in near Dallas. A few pellets could reach us this afternoon, then freezing mornings on Thanksgiving and Friday.",
+    "summary": "A light band of rain is moving east from the Metroplex, and spotters from Fort Worth to Waco to Ennis have reported sleet mixed in this morning, even with temperatures in the mid 40s. The air near the ground is very dry, so falling precipitation cools itself as it evaporates and some of it reaches the ground as sleet or soft ice pellets. If the band holds together it reaches the Tyler area around 3 to 5 PM. Most models weaken it before it gets here, so the chance of any precipitation is low, but a brief burst could include a few pellets. Temperatures stay well above freezing, so there is no ice on roads. Clearing behind it sets up freezing mornings Thursday and Friday.",
+    "rain_note": "About a 20% chance of light rain from mid afternoon into tonight. About a 10 to 15% chance of seeing a few sleet or graupel pellets mixed in, best west of Tyler and in any heavier burst. Temperatures stay in the 40s, so nothing freezes on the ground. Not enough to help the drought.",
     "hourly": [
       {
         "time": "8 AM",
@@ -33,35 +33,35 @@
         "time": "Noon",
         "icon": "cloud",
         "temp": 48,
-        "sky": "Mostly cloudy",
-        "wind": "N 10 mph"
+        "sky": "Cloudy",
+        "wind": "NE 10 mph"
       },
       {
         "time": "3 PM",
         "icon": "cloud",
         "temp": 49,
-        "sky": "Mostly cloudy",
+        "sky": "Cloudy, slight chance of rain or sleet",
         "wind": "N 10 mph"
       },
       {
         "time": "6 PM",
-        "icon": "cloud",
-        "temp": 47,
-        "sky": "Cloudy, slight chance of light rain",
+        "icon": "rain",
+        "temp": 46,
+        "sky": "Chance of light rain, a few sleet pellets possible",
         "wind": "N 5 mph"
       },
       {
         "time": "9 PM",
         "icon": "cloud",
         "temp": 43,
-        "sky": "Cloudy",
+        "sky": "Cloudy, slight chance of a shower",
         "wind": "N 5 mph"
       },
       {
         "time": "6 AM Wed",
-        "icon": "moon",
+        "icon": "pcloud",
         "temp": 36,
-        "sky": "Clear",
+        "sky": "Clearing",
         "wind": "NW 5 mph"
       }
     ],
@@ -72,7 +72,7 @@
         "hi": 54,
         "lo": 31,
         "flag": true,
-        "text": "Sunny. Thanksgiving morning starts near freezing."
+        "text": "Sunny and cool. Low is Thanksgiving morning: about 31 in town, mid to upper 20s in low spots."
       },
       {
         "day": "Thanksgiving",
@@ -80,14 +80,14 @@
         "hi": 55,
         "lo": 31,
         "flag": true,
-        "text": "Sunny and cool. Another freeze likely Friday morning."
+        "text": "Sunny and cool. Low is Friday morning: the coldest night, near 31 in town and mid 20s in low spots."
       },
       {
         "day": "Fri",
         "icon": "sun",
         "hi": 62,
         "lo": 39,
-        "text": "Sunny and milder after a cold start."
+        "text": "Sunny and milder after a cold start. Low is Saturday morning."
       },
       {
         "day": "Sat",
@@ -106,6 +106,11 @@
     ],
     "facts": [
       {
+        "k": "Sleet",
+        "v": "A few pellets possible",
+        "p": "Reported around Dallas and Waco this morning; no ice on roads"
+      },
+      {
         "k": "Severe storms",
         "v": "None expected",
         "p": "SPC: no severe risk in Texas through Thursday"
@@ -116,17 +121,20 @@
         "p": "No notable outages in Smith or nearby counties"
       },
       {
-        "k": "School closings",
-        "v": "None",
-        "p": "Nothing listed this morning"
-      },
-      {
         "k": "Freeze",
-        "v": "Likely Thu–Fri mornings",
-        "p": "NWS lows near 31; region ranges from mid 20s to mid 30s"
+        "v": "Thu & Fri mornings",
+        "p": "About 31 in town; 23 to 28 in rural low spots"
       }
     ],
     "panels": [
+      {
+        "kicker": "This afternoon",
+        "title": "Why sleet can fall at 45 degrees",
+        "paras": [
+          "This morning's weather balloon at Fort Worth found the air freezing about a mile up, with very dry air below it. Snow falling from that cold layer starts to melt, but evaporation into the dry air cools it back down, so some of it lands as sleet or soft graupel pellets. That is exactly what spotters reported from Fort Worth to Ennis.",
+          "The Shreveport balloon was warmer and moister aloft this morning, but cooler air moves in this evening as the disturbance passes. The best odds of a few pellets are west of Tyler and during any heavier burst. Precipitation will be light and brief, and ground temperatures stay in the 40s, so there is no travel impact."
+        ]
+      },
       {
         "kicker": "Thanksgiving week",
         "title": "Two cold mornings, then a warm weekend",
@@ -144,7 +152,66 @@
         ]
       }
     ],
-    "sources": "NWS Shreveport forecast and discussion, NWS Fort Worth, NOAA Storm Prediction Center, NOAA Climate Prediction Center, PowerOutage.us, KLTV closings, Weather Underground, Open-Meteo model data (ECMWF and GFS ensembles)."
+    "sources": "NWS Shreveport forecast and discussion, NWS Fort Worth, mPING spotter reports, NWS weather balloon soundings (Fort Worth and Shreveport), NOAA Storm Prediction Center, NOAA Climate Prediction Center, PowerOutage.us, Weather Underground, Open-Meteo model data (HRRR, GFS, ECMWF, ICON, Canadian, NBM).",
+    "days_note": "High / low the next morning",
+    "tables": [
+      {
+        "kicker": "Morning lows",
+        "title": "How cold each morning gets",
+        "cols": [
+          "Morning",
+          "In town",
+          "Low spots"
+        ],
+        "rows": [
+          [
+            {
+              "name": "Wednesday",
+              "sub": "tonight · only cold if skies clear before dawn"
+            },
+            "34–37°",
+            "31–33°"
+          ],
+          [
+            {
+              "name": "Thanksgiving",
+              "sub": "clear, light north breeze"
+            },
+            "30–33°",
+            "25–28°"
+          ],
+          [
+            {
+              "name": "Friday",
+              "sub": "coldest · calm, clear and dry"
+            },
+            "30–33°",
+            "23–27°"
+          ],
+          [
+            {
+              "name": "Saturday",
+              "sub": "south winds return"
+            },
+            "38–41°",
+            "32–35°"
+          ],
+          [
+            {
+              "name": "Sunday",
+              "sub": "breezy and mild"
+            },
+            "47–50°",
+            "44–47°"
+          ]
+        ],
+        "key_rows": [
+          1,
+          2
+        ],
+        "note": "In town means Tyler, Lindale and other built-up areas. Low spots means rural valleys, creek and river bottoms and sandy open fields, which can run 5 to 9 degrees colder on calm, clear nights. Cover tender plants and bring pets in Wednesday and Thursday nights. Models range from 28 to 37 for Friday morning; on calm, dry nights the colder end usually wins."
+      }
+    ]
   },
   "nm": {
     "date_label": "Tuesday, Nov 24, 2026",

@@ -182,6 +182,27 @@ def table(cols, rows):
     </div>'''
 
 
+def table_panels(tables):
+    """Generic table panels, e.g. "Morning lows", "Peak weather", "Travel routes":
+    {"kicker","title","cols":[...],"rows":[[cell,...],...],"key_rows":[i,...],"note"}
+    A first cell may be {"name","sub"}."""
+    out = []
+    for t in tables:
+        cols = [(h, "") for h in t["cols"]]
+        rows = []
+        for n, row in enumerate(t["rows"]):
+            cells = []
+            for c, v in enumerate(row):
+                if c == 0 and isinstance(v, dict):
+                    cells.append(f'<td>{e(v["name"])}<span class="el">{e(v.get("sub", ""))}</span></td>')
+                else:
+                    cells.append(f'<td>{e(str(v))}</td>' if c == 0 else f'<td class="num">{e(str(v))}</td>')
+            rows.append(("key" if n in t.get("key_rows", []) else "", cells))
+        tb = table(cols, rows)
+        out.append({"kicker": t["kicker"], "title": t["title"], "paras": [t["note"]] if t.get("note") else [], "_html": "\n" + tb.replace("\n    ", "\n      ")})
+    return out
+
+
 def east_texas(d):
     b = [mast("Ralph's Weather", "East Texas Weather", "Tyler · Smith County area", d["date_label"], d["issued"]),
          chips(d["chips"]),
@@ -196,10 +217,10 @@ def east_texas(d):
     <div class="strip">{slots}
     </div>
   </section>''')
-    b.append(days(d["days"], "The week ahead", "High / low"))
+    b.append(days(d["days"], "The week ahead", d.get("days_note", "High / low")))
     facts = "".join(f'\n    <div class="fact"><div class="k">{e(f["k"])}</div><div class="v">{e(f["v"])}</div><p>{e(f["p"])}</p></div>' for f in d["facts"][:4])
     b.append(f'  <div class="facts">{facts}\n  </div>')
-    b.append(panels(d["panels"]))
+    b.append(panels(table_panels(d.get("tables", [])) + d["panels"]))
     b.append(footer([{"text": "Official alerts: NWS Shreveport", "url": "https://www.weather.gov/shv/"},
                      {"text": "Ralph's Weather on Facebook", "url": "https://www.facebook.com/RalphsWeather/"}], d["sources"]))
     return head("East Texas Weather | Ralph's Weather",
@@ -237,21 +258,7 @@ def nm(d):
         ski = table([("Resort", ""), (d.get("ski_col", "Opens"), "")],
                     [("key" if s.get("key") else "", [f'<td>{e(s["name"])}</td>', f'<td class="num">{e(s["status"])}</td>']) for s in d["ski"]])
         extra.append({"kicker": "Ski areas", "title": d.get("ski_title", "Opening days"), "paras": [d["ski_note"]] if d.get("ski_note") else [], "_html": "\n" + ski.replace("\n    ", "\n      ")})
-    # generic tables, e.g. summer "Peak weather", "Fire", "Trail conditions":
-    # {"kicker","title","cols":[...],"rows":[[cell,...],...],"key_rows":[i,...],"note"}
-    for t in d.get("tables", []):
-        cols = [(h, "") for h in t["cols"]]
-        rows = []
-        for n, row in enumerate(t["rows"]):
-            cells = []
-            for c, v in enumerate(row):
-                if c == 0 and isinstance(v, dict):
-                    cells.append(f'<td>{e(v["name"])}<span class="el">{e(v.get("sub", ""))}</span></td>')
-                else:
-                    cells.append(f'<td>{e(str(v))}</td>' if c == 0 else f'<td class="num">{e(str(v))}</td>')
-            rows.append(("key" if n in t.get("key_rows", []) else "", cells))
-        tb = table(cols, rows)
-        extra.append({"kicker": t["kicker"], "title": t["title"], "paras": [t["note"]] if t.get("note") else [], "_html": "\n" + tb.replace("\n    ", "\n      ")})
+    extra += table_panels(d.get("tables", []))
     b.append(panels(extra + d["panels"]))
     b.append(footer([{"text": "Official alerts: NWS Albuquerque", "url": "https://www.weather.gov/abq/"},
                      {"text": "Road conditions: NMRoads", "url": "https://www.nmroads.com"},
