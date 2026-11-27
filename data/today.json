@@ -1,502 +1,500 @@
 {
-  "east_texas": {
-    "date_label": "Thursday, Nov 26, 2026",
-    "issued": "9:30 AM CST",
-    "chips": [
-      {
-        "text": "One more freeze in low spots Friday morning",
-        "kind": "cold"
-      },
-      {
-        "text": "Breezy and chilly Thanksgiving",
-        "kind": ""
-      },
-      {
-        "text": "Dry through Saturday, front Sunday",
-        "kind": ""
-      }
-    ],
-    "hi": 52,
-    "lo": 31,
-    "headline": "Sunny, chilly and breezy for Thanksgiving. One more cold start Friday, then a quick warm-up to near 70 Saturday.",
-    "summary": "Much of the area reached freezing this morning, with Tyler near 33 and rural low spots in the 20s. Today stays sunny with highs in the low 50s and northwest winds of 10 to 20 mph, gusting near 25 this afternoon. Tonight is clear and calm, with lows near 31 in town and the upper 20s in low spots. Friday morning looks like the last freeze for a while. Highs reach the 60s Friday and near 70 Saturday before a cold front Sunday.",
-    "rain_note": "No rain today through Saturday. A few showers are possible east of I-49 early Sunday, but most of the area stays dry and the drought continues. Models show a better rain chance around Dec 3 to 6.",
-    "hourly": [
-      {
-        "time": "Noon",
-        "icon": "sun",
-        "temp": 48,
-        "sky": "Sunny, feels like 42",
-        "wind": "NW 15, gusts 25"
-      },
-      {
-        "time": "3 PM",
-        "icon": "sun",
-        "temp": 52,
-        "sky": "Sunny and breezy",
-        "wind": "NW 15, gusts 25"
-      },
-      {
-        "time": "6 PM",
-        "icon": "moon",
-        "temp": 45,
-        "sky": "Clear",
-        "wind": "NW 5 to 10"
-      },
-      {
-        "time": "9 PM",
-        "icon": "moon",
-        "temp": 38,
-        "sky": "Clear",
-        "wind": "W 5 mph"
-      },
-      {
-        "time": "Midnight",
-        "icon": "moon",
-        "temp": 36,
-        "sky": "Clear",
-        "wind": "NW 5 mph"
-      },
-      {
-        "time": "6 AM Fri",
-        "icon": "sun",
-        "temp": 32,
-        "sky": "Clear and frosty, low near 31",
-        "wind": "W 5 mph"
-      }
-    ],
-    "days": [
-      {
-        "day": "Thanksgiving",
-        "icon": "sun",
-        "hi": 52,
-        "lo": 31,
-        "flag": true,
-        "text": "Sunny and breezy, gusts near 25. Low Friday morning near 31, upper 20s in low spots."
-      },
-      {
-        "day": "Fri",
-        "icon": "sun",
-        "hi": 63,
-        "lo": 43,
-        "text": "Sunny and milder after a cold start."
-      },
-      {
-        "day": "Sat",
-        "icon": "sun",
-        "hi": 70,
-        "lo": 53,
-        "text": "Sunny and warm. South winds 10 to 20, gusts near 30."
-      },
-      {
-        "day": "Sun",
-        "icon": "pcloud",
-        "hi": 63,
-        "lo": 37,
-        "text": "Cold front early. A few showers possible mainly east of I-49, then sunny."
-      },
-      {
-        "day": "Mon",
-        "icon": "sun",
-        "hi": 64,
-        "lo": 44,
-        "text": "Sunny and seasonable."
-      }
-    ],
-    "facts": [
-      {
-        "k": "Freeze",
-        "v": "Low spots Fri AM",
-        "p": "Near 31 in town, upper 20s in rural low spots"
-      },
-      {
-        "k": "Severe storms",
-        "v": "None expected",
-        "p": "SPC: no severe risk for East Texas through Saturday"
-      },
-      {
-        "k": "Power",
-        "v": "Normal",
-        "p": "No notable outages in Smith or nearby counties"
-      },
-      {
-        "k": "School closings",
-        "v": "Holiday break",
-        "p": "No weather-related closings expected"
-      }
-    ],
-    "panels": [
-      {
-        "kicker": "This morning",
-        "title": "The first widespread freeze",
-        "paras": [
-          "Clear skies and light winds let temperatures drop to about 33 in Tyler this morning, with rural low spots in the 20s. NWS Shreveport had a Freeze Warning out for Smith County and much of the region until 9 AM.",
-          "Friday morning looks similar but a degree or two milder in town. After that, south winds return and lows climb into the 40s and 50s for the weekend."
-        ]
-      },
-      {
-        "kicker": "Looking ahead",
-        "title": "Warm early December, rain chance returns",
-        "paras": [
-          "The Climate Prediction Center favors above-normal temperatures for Texas through Dec 9 and leans wetter than normal in the Dec 3 to 9 period. The European and American models both show a rain system around Dec 3 to 6, though they disagree on timing and amounts.",
-          "It is still a week or more out, so confidence is moderate. El Niño remains very strong, which tends to favor a more active storm track later in the winter."
-        ]
-      }
-    ],
-    "sources": "NWS Shreveport forecast and discussion, NWS Fort Worth, NOAA Storm Prediction Center, NOAA Climate Prediction Center, Tyler airport observations, PowerOutage.us, Texas A&M Forest Service, Open-Meteo model data (HRRR, NBM, ECMWF, GFS, Canadian).",
-    "days_note": "High / low the next morning",
-    "tables": [
-      {
-        "kicker": "Morning lows",
-        "title": "How cold each morning gets",
-        "cols": [
-          "Morning",
-          "In town",
-          "Low spots"
-        ],
-        "rows": [
-          [
-            {
-              "name": "Friday",
-              "sub": "clear and calm"
-            },
-            "30–33°",
-            "26–29°"
-          ],
-          [
-            {
-              "name": "Saturday",
-              "sub": "south winds return"
-            },
-            "41–44°",
-            "36–40°"
-          ],
-          [
-            {
-              "name": "Sunday",
-              "sub": "mild before the front"
-            },
-            "50–54°",
-            "46–50°"
-          ],
-          [
-            {
-              "name": "Monday",
-              "sub": "cooler behind the front"
-            },
-            "36–39°",
-            "32–35°"
-          ],
-          [
-            {
-              "name": "Tuesday",
-              "sub": "milder"
-            },
-            "42–46°",
-            "38–42°"
-          ]
-        ],
-        "key_rows": [
-          0
-        ],
-        "note": "In town means Tyler and other built-up areas. Low spots means rural valleys, creek and river bottoms and sandy open fields, which can run 5 to 8 degrees colder on calm, clear nights. Protect tender plants one more night."
-      }
+ "east_texas": {
+  "date_label": "Friday, Nov 27, 2026",
+  "issued": "9:45 AM CST",
+  "chips": [
+   {
+    "text": "Last frosty morning for a while",
+    "kind": "cold"
+   },
+   {
+    "text": "Near 70 Saturday",
+    "kind": ""
+   },
+   {
+    "text": "Dry front Sunday, rain chance late next week",
+    "kind": ""
+   }
+  ],
+  "hi": 63,
+  "lo": 46,
+  "headline": "Sunny and milder today after a frosty start. Near 70 Saturday, then a mostly dry front Sunday.",
+  "summary": "Temperatures dropped to near freezing this morning, with Tyler around 33 and some frost in rural low spots. Southwest winds bring a quick warm-up, with sunny skies and highs in the low to mid 60s this afternoon. Tonight stays much milder, in the upper 40s, with a light southwest breeze. Saturday reaches the low 70s with south winds of 10 to 20 mph. A cold front moves through early Sunday, followed by gusty northwest winds and lows in the 30s Monday morning.",
+  "rain_note": "No rain today or Saturday. A few showers are possible early Sunday, mainly east of I-49, so most of the area stays dry. A storm system from the Southwest could bring a better chance of rain and storms around Thu and Fri, Dec 3 and 4.",
+  "hourly": [
+   {
+    "time": "8 AM",
+    "icon": "sun",
+    "temp": 35,
+    "sky": "Sunny, frost in low spots",
+    "wind": "SW 5 mph"
+   },
+   {
+    "time": "Noon",
+    "icon": "sun",
+    "temp": 59,
+    "sky": "Sunny",
+    "wind": "SW 10 mph"
+   },
+   {
+    "time": "3 PM",
+    "icon": "sun",
+    "temp": 63,
+    "sky": "Sunny",
+    "wind": "SW 10 mph"
+   },
+   {
+    "time": "6 PM",
+    "icon": "moon",
+    "temp": 56,
+    "sky": "Clear",
+    "wind": "S 5 mph"
+   },
+   {
+    "time": "9 PM",
+    "icon": "moon",
+    "temp": 50,
+    "sky": "Clear",
+    "wind": "S 10 mph"
+   },
+   {
+    "time": "6 AM Sat",
+    "icon": "moon",
+    "temp": 47,
+    "sky": "Clear and mild",
+    "wind": "SW 15, gusts near 20"
+   }
+  ],
+  "days": [
+   {
+    "day": "Fri",
+    "icon": "sun",
+    "hi": 63,
+    "lo": 46,
+    "flag": true,
+    "text": "Sunny and milder after a frosty start."
+   },
+   {
+    "day": "Sat",
+    "icon": "sun",
+    "hi": 71,
+    "lo": 53,
+    "text": "Sunny and warm. South winds 10 to 20 mph."
+   },
+   {
+    "day": "Sun",
+    "icon": "pcloud",
+    "hi": 63,
+    "lo": 38,
+    "text": "Cold front early. A few showers possible mainly east of I-49. Gusty northwest winds."
+   },
+   {
+    "day": "Mon",
+    "icon": "sun",
+    "hi": 64,
+    "lo": 45,
+    "text": "Sunny after a chilly start."
+   },
+   {
+    "day": "Tue",
+    "icon": "sun",
+    "hi": 71,
+    "lo": 55,
+    "text": "Sunny and warm."
+   }
+  ],
+  "facts": [
+   {
+    "k": "Severe storms",
+    "v": "None expected",
+    "p": "SPC: no severe risk through Sunday; watching late next week"
+   },
+   {
+    "k": "Power",
+    "v": "Normal",
+    "p": "No notable outages in Smith or nearby counties"
+   },
+   {
+    "k": "School closings",
+    "v": "None",
+    "p": "Holiday break, no closings listed"
+   },
+   {
+    "k": "Freeze",
+    "v": "Not expected",
+    "p": "Mid to upper 30s Monday morning, colder in low spots"
+   }
+  ],
+  "panels": [
+   {
+    "kicker": "This weekend",
+    "title": "Warm Saturday, dry front Sunday",
+    "paras": [
+     "South winds push highs into the low 70s Saturday. A cold front moves through early Sunday. NWS Shreveport keeps the best shower chances east of I-49, so the Tyler area likely stays dry.",
+     "Northwest winds turn gusty behind the front Sunday, and Monday morning drops into the mid to upper 30s. Low spots could come close to freezing, but a widespread freeze is not expected."
     ]
-  },
-  "nm": {
-    "date_label": "Thursday, Nov 26, 2026",
-    "issued": "8:30 AM MST",
-    "chips": [
-      {
-        "text": "Calm and dry through Friday",
-        "kind": ""
-      },
-      {
-        "text": "Very cold nights in the high valleys",
-        "kind": "cold"
-      },
-      {
-        "text": "Strong winds Saturday, gusts 45–60 mph possible",
-        "kind": "watch"
-      }
-    ],
-    "hero": [
-      {
-        "style": "big-cold",
-        "value": "13°",
-        "label": "Angel Fire|this morning's low"
-      },
-      {
-        "style": "side",
-        "value": "Sat",
-        "label": "Strong winds|gusts 45–60 mph possible"
-      }
-    ],
-    "headline": "Quiet Thanksgiving in the mountains. Strong winds arrive Saturday, and a wetter storm may follow midweek.",
-    "summary": "Sunny skies and light winds continue today with seasonal temperatures and some high cirrus. Angel Fire dropped to about 13 this morning, and the high valleys stay very cold tonight. Winds pick up Friday afternoon over the central highlands, then a fast-moving system brings strong northwest winds Saturday. NWS Albuquerque says highland gusts could reach 45 to 60 mph and a High Wind Watch may be issued. Another breezy day comes Monday, and a Pacific storm could bring rain and snow to western and central areas around Wednesday.",
-    "town_cols": [
-      "Today high",
-      "Tonight low",
-      "Fri high",
-      "Fri night"
-    ],
-    "towns": [
-      {
-        "name": "Red River",
-        "elev": "8,650 ft",
-        "d1_hi": 46,
-        "n1_lo": 23,
-        "pop": 0,
-        "d2_hi": 48,
-        "n2_lo": 26
-      },
-      {
-        "name": "Angel Fire",
-        "elev": "8,400 ft",
-        "d1_hi": 50,
-        "n1_lo": 16,
-        "pop": 0,
-        "d2_hi": 53,
-        "n2_lo": 22,
-        "key": true
-      },
-      {
-        "name": "Questa",
-        "elev": "7,500 ft",
-        "d1_hi": 50,
-        "n1_lo": 28,
-        "pop": 0,
-        "d2_hi": 53,
-        "n2_lo": 31
-      },
-      {
-        "name": "Chama",
-        "elev": "7,900 ft",
-        "d1_hi": 49,
-        "n1_lo": 26,
-        "pop": 0,
-        "d2_hi": 51,
-        "n2_lo": 27
-      },
-      {
-        "name": "Taos",
-        "elev": "6,970 ft",
-        "d1_hi": 53,
-        "n1_lo": 24,
-        "pop": 0,
-        "d2_hi": 54,
-        "n2_lo": 27
-      },
-      {
-        "name": "Mora",
-        "elev": "7,200 ft",
-        "d1_hi": 57,
-        "n1_lo": 29,
-        "pop": 0,
-        "d2_hi": 61,
-        "n2_lo": 33
-      },
-      {
-        "name": "Pecos",
-        "elev": "6,900 ft",
-        "d1_hi": 57,
-        "n1_lo": 31,
-        "pop": 0,
-        "d2_hi": 60,
-        "n2_lo": 35
-      },
-      {
-        "name": "Los Alamos",
-        "elev": "7,300 ft",
-        "d1_hi": 51,
-        "n1_lo": 32,
-        "pop": 0,
-        "d2_hi": 53,
-        "n2_lo": 35
-      }
-    ],
-    "days": [
-      {
-        "day": "Thanksgiving",
-        "icon": "sun",
-        "temp_text": "Upper 40s–50s",
-        "temp_kind": "h",
-        "text": "Sunny with light winds and a few high clouds."
-      },
-      {
-        "day": "Fri",
-        "icon": "pcloud",
-        "temp_text": "Near 50",
-        "temp_kind": "h",
-        "text": "Mostly sunny. Breezy over the central highlands in the afternoon."
-      },
-      {
-        "day": "Sat",
-        "icon": "wind",
-        "temp_text": "Windy",
-        "flag": true,
-        "text": "Strong northwest winds, gusts 45 to 60 mph possible in the highlands. Light snow possible near Raton Pass."
-      },
-      {
-        "day": "Sun",
-        "icon": "sun",
-        "temp_text": "Near normal",
-        "temp_kind": "h",
-        "text": "Lighter winds. Cooler in the eastern plains behind a front."
-      },
-      {
-        "day": "Mon",
-        "icon": "wind",
-        "temp_text": "Breezy",
-        "text": "Another dry system brings breezy to windy conditions."
-      }
-    ],
-    "snowpack": [
-      {
-        "station": "Taos Powderhorn",
-        "elev": "11,020 ft",
-        "depth": "16 in",
-        "swe": "3.9 in"
-      },
-      {
-        "station": "Gallegos Peak",
-        "elev": "9,460 ft",
-        "depth": "8 in",
-        "swe": "1.8 in"
-      },
-      {
-        "station": "Palo",
-        "elev": "9,330 ft",
-        "depth": "1 in",
-        "swe": "0.4 in"
-      },
-      {
-        "station": "Tolby",
-        "elev": "10,210 ft",
-        "depth": "2 in",
-        "swe": "0.8 in"
-      }
-    ],
-    "snow_note": "Start-of-day readings for Thursday. Little change in dry weather. Taos Powderhorn is at 130 percent of median snow water and Gallegos Peak is at 100 percent.",
-    "ski_title": "Ski areas",
-    "ski_col": "Status",
-    "ski": [
-      {
-        "name": "Sipapu",
-        "status": "Open · 2 lifts · 14 in base",
-        "key": true
-      },
-      {
-        "name": "Red River",
-        "status": "Open · 2 lifts · 10–16 in base"
-      },
-      {
-        "name": "Taos Ski Valley",
-        "status": "Listed open · 19 in base"
-      },
-      {
-        "name": "Ski Santa Fe",
-        "status": "Open · 4 lifts"
-      },
-      {
-        "name": "Pajarito",
-        "status": "~Nov 27"
-      },
-      {
-        "name": "Ski Apache",
-        "status": "~Nov 28"
-      },
-      {
-        "name": "Angel Fire",
-        "status": "~Dec 11"
-      }
-    ],
-    "ski_note": "Sipapu reports 7 inches of new snow in the past week and 15 inches for the season. Resort base depths include man-made snow. Dates with ~ are projected and may change.",
-    "panels": [
-      {
-        "kicker": "Saturday",
-        "title": "Strong winds over the highlands",
-        "paras": [
-          "A fast-moving system dives out of the northern Rockies Saturday. NWS Albuquerque expects the strongest winds near and just east of the central mountain chain in the afternoon, with gusts of 45 to 60 mph possible.",
-          "Winds like that can make driving difficult for high-profile vehicles and can damage weak trees and utility poles. Winds ease in the west Saturday evening but stay strong in the northeast past midnight."
-        ]
-      },
-      {
-        "kicker": "Roads",
-        "title": "Icy stretch still listed on US-64",
-        "paras": [
-          "NMRoads still lists US-64 east of Taos (mile markers 257 to 272) as snow packed and icy, last updated Tuesday. No severe driving conditions are listed anywhere in the state.",
-          "Nothing is listed for the interstates or for NM-518, NM-434, NM-38, NM-75, NM-150 or NM-68."
-        ]
-      },
-      {
-        "kicker": "Looking ahead",
-        "title": "Wetter pattern next week",
-        "paras": [
-          "NWS Albuquerque says a deeper Pacific low could bring rain and snow to parts of western and central New Mexico around Wednesday.",
-          "The Climate Prediction Center favors wetter than normal conditions around the Four Corners Dec 3 to 9. El Niño is very strong, which tends to favor better snow odds in northern New Mexico as winter goes on."
-        ]
-      }
-    ],
-    "sources": "NWS Albuquerque forecast and discussion, Angel Fire airport observations, NRCS SNOTEL, NMRoads, OnTheSnow, Sipapu snow report, NOAA Climate Prediction Center.",
-    "town_title": "Mountain towns",
-    "tables": [
-      {
-        "kicker": "Travel",
-        "title": "Travel routes",
-        "cols": [
-          "Route",
-          "Conditions"
-        ],
-        "rows": [
-          [
-            {
-              "name": "I-25 north",
-              "sub": "Raton Pass – Las Vegas"
-            },
-            "No weather issues listed"
-          ],
-          [
-            {
-              "name": "I-25 central",
-              "sub": "Las Vegas – Santa Fe – Albuquerque"
-            },
-            "No weather issues listed"
-          ],
-          [
-            {
-              "name": "I-25 south",
-              "sub": "Albuquerque – Las Cruces"
-            },
-            "No weather issues listed"
-          ],
-          [
-            {
-              "name": "I-40 east",
-              "sub": "Texas line – Clines Corners – Albuquerque"
-            },
-            "No weather issues listed"
-          ],
-          [
-            {
-              "name": "I-40 west",
-              "sub": "Albuquerque – Gallup – Arizona line"
-            },
-            "No weather issues listed"
-          ],
-          [
-            {
-              "name": "Mountain highways",
-              "sub": "NM-518, US-64, NM-434, NM-38, NM-75, NM-150, NM-68"
-            },
-            "US-64 east of Taos (MM 257–272) still listed snow packed and icy. Nothing listed for NM-518, NM-434, NM-38, NM-75, NM-150 or NM-68"
-          ]
-        ],
-        "key_rows": [
-          5
-        ],
-        "note": "Strong crosswinds are likely Saturday afternoon on I-25 and I-40 near the central mountains and in the northeast highlands. Check nmroads.com before leaving."
-      }
+   },
+   {
+    "kicker": "Looking ahead",
+    "title": "Warm start to December, rain chance late next week",
+    "paras": [
+     "The Climate Prediction Center strongly favors above-normal temperatures through Dec 10. A storm system from the Southwest is forecast to bring showers and storms around Thu and Fri, Dec 3 and 4, and the Storm Prediction Center says severe potential may increase from the southern Plains into the Southeast.",
+     "Most European ensemble members show at least half an inch of rain here Dec 2 to 5, which would help the dry conditions. Timing and amounts are still uncertain. El Niño is very strong and tends to favor an active storm track later in the winter."
     ]
-  }
+   }
+  ],
+  "sources": "NWS Shreveport forecast and discussion, NWS Fort Worth, NOAA Storm Prediction Center, NOAA Weather Prediction Center, NOAA Climate Prediction Center, Tyler airport observations, PowerOutage.us, KLTV closings, Texas A&M Forest Service, Open-Meteo model data (HRRR, NBM, ECMWF, GFS, Canadian).",
+  "days_note": "High / low the next morning",
+  "tables": [
+   {
+    "kicker": "Morning lows",
+    "title": "How cold each morning gets",
+    "cols": [
+     "Morning",
+     "In town",
+     "Low spots"
+    ],
+    "rows": [
+     [
+      {
+       "name": "Saturday",
+       "sub": "south winds"
+      },
+      "45–48°",
+      "40–45°"
+     ],
+     [
+      {
+       "name": "Sunday",
+       "sub": "mild before the front"
+      },
+      "51–55°",
+      "47–51°"
+     ],
+     [
+      {
+       "name": "Monday",
+       "sub": "cooler behind the front"
+      },
+      "36–40°",
+      "32–36°"
+     ],
+     [
+      {
+       "name": "Tuesday",
+       "sub": "milder"
+      },
+      "42–46°",
+      "38–42°"
+     ],
+     [
+      {
+       "name": "Wednesday",
+       "sub": "warm and humid"
+      },
+      "52–58°",
+      "48–54°"
+     ]
+    ],
+    "key_rows": [
+     2
+    ],
+    "note": "In town means Tyler and other built-up areas. Low spots means rural valleys, creek and river bottoms and sandy open fields, which can run 4 to 8 degrees colder on calm, clear nights. Monday morning is the coolest of the next five."
+   }
+  ]
+ },
+ "nm": {
+  "date_label": "Friday, Nov 27, 2026",
+  "issued": "8:45 AM MST",
+  "chips": [
+   {
+    "text": "Mild and dry today",
+    "kind": ""
+   },
+   {
+    "text": "Strong winds Saturday, gusts 40–55 mph",
+    "kind": "watch"
+   },
+   {
+    "text": "Cold Saturday night, teens in high valleys",
+    "kind": "cold"
+   }
+  ],
+  "hero": [
+   {
+    "style": "big-cold",
+    "value": "17°",
+    "label": "Angel Fire|this morning's low"
+   },
+   {
+    "style": "side",
+    "value": "Sat",
+    "label": "Strong winds|gusts 35–55 mph"
+   }
+  ],
+  "headline": "Mild and mostly sunny today. Strong winds Saturday, a cold Saturday night, then a chance of rain and snow midweek.",
+  "summary": "High clouds and mild temperatures today, running 5 to 15 degrees above normal, with afternoon breezes over the central highlands. Winds strengthen on peaks and ridges tonight. A fast-moving system brings strong winds Saturday afternoon, with gusts of 35 to 55 mph, highest over the central highlands and the central mountain chain. NWS Albuquerque has High Wind Watches for the central highlands and Union County. Saturday night turns colder, with lows in the teens in the high valleys. Dry weather lasts through Tuesday, then a Pacific low could bring rain and snow to western and central areas Wednesday and Thursday.",
+  "town_cols": [
+   "Today high",
+   "Tonight low",
+   "Sat high",
+   "Sat night"
+  ],
+  "towns": [
+   {
+    "name": "Red River",
+    "elev": "8,650 ft",
+    "d1_hi": 47,
+    "n1_lo": 25,
+    "pop": 0,
+    "d2_hi": 43,
+    "n2_lo": 18
+   },
+   {
+    "name": "Angel Fire",
+    "elev": "8,400 ft",
+    "d1_hi": 54,
+    "n1_lo": 22,
+    "pop": 0,
+    "d2_hi": 48,
+    "n2_lo": 13,
+    "key": true
+   },
+   {
+    "name": "Questa",
+    "elev": "7,500 ft",
+    "d1_hi": 53,
+    "n1_lo": 31,
+    "pop": 0,
+    "d2_hi": 51,
+    "n2_lo": 25
+   },
+   {
+    "name": "Chama",
+    "elev": "7,900 ft",
+    "d1_hi": 50,
+    "n1_lo": 27,
+    "pop": 0,
+    "d2_hi": 46,
+    "n2_lo": 22
+   },
+   {
+    "name": "Taos",
+    "elev": "6,970 ft",
+    "d1_hi": 54,
+    "n1_lo": 27,
+    "pop": 0,
+    "d2_hi": 54,
+    "n2_lo": 23
+   },
+   {
+    "name": "Mora",
+    "elev": "7,200 ft",
+    "d1_hi": 61,
+    "n1_lo": 33,
+    "pop": 0,
+    "d2_hi": 54,
+    "n2_lo": 21
+   },
+   {
+    "name": "Pecos",
+    "elev": "6,900 ft",
+    "d1_hi": 61,
+    "n1_lo": 35,
+    "pop": 0,
+    "d2_hi": 56,
+    "n2_lo": 23
+   },
+   {
+    "name": "Los Alamos",
+    "elev": "7,300 ft",
+    "d1_hi": 54,
+    "n1_lo": 34,
+    "pop": 0,
+    "d2_hi": 54,
+    "n2_lo": 31
+   }
+  ],
+  "days": [
+   {
+    "day": "Fri",
+    "icon": "sun",
+    "temp_text": "40s–50s",
+    "temp_kind": "h",
+    "text": "Mostly sunny with high clouds. Breezy over the central highlands."
+   },
+   {
+    "day": "Sat",
+    "icon": "wind",
+    "temp_text": "Windy",
+    "flag": true,
+    "text": "Strong west to northwest winds, gusts 35 to 55 mph. Turning colder at night."
+   },
+   {
+    "day": "Sun",
+    "icon": "sun",
+    "temp_text": "Cooler",
+    "temp_kind": "h",
+    "text": "Sunny and lighter winds. Coldest in the eastern plains."
+   },
+   {
+    "day": "Mon",
+    "icon": "wind",
+    "temp_text": "Breezy",
+    "text": "Dry and breezy to windy, milder."
+   },
+   {
+    "day": "Tue",
+    "icon": "pcloud",
+    "temp_text": "Above normal",
+    "temp_kind": "h",
+    "text": "Dry and mild with breezy southwest winds."
+   }
+  ],
+  "snowpack": [
+   {
+    "station": "Taos Powderhorn",
+    "elev": "11,020 ft",
+    "depth": "16 in",
+    "swe": "3.9 in"
+   },
+   {
+    "station": "Gallegos Peak",
+    "elev": "9,460 ft",
+    "depth": "7 in",
+    "swe": "1.8 in"
+   },
+   {
+    "station": "Palo",
+    "elev": "9,330 ft",
+    "depth": "1 in",
+    "swe": "0.3 in"
+   },
+   {
+    "station": "Tolby",
+    "elev": "10,210 ft",
+    "depth": "2 in",
+    "swe": "0.8 in"
+   }
+  ],
+  "snow_note": "Start-of-day readings for Friday. Little change during the dry spell, with some settling at the mid-elevation sites.",
+  "ski_title": "Ski areas",
+  "ski_col": "Status",
+  "ski": [
+   {
+    "name": "Sipapu",
+    "status": "Open · 2 lifts · 14 in base",
+    "key": true
+   },
+   {
+    "name": "Red River",
+    "status": "Open · 2 lifts · 10–16 in base"
+   },
+   {
+    "name": "Taos Ski Valley",
+    "status": "Listed open · 19 in base"
+   },
+   {
+    "name": "Ski Santa Fe",
+    "status": "Open · 4 lifts"
+   },
+   {
+    "name": "Pajarito",
+    "status": "Open · 1 lift"
+   },
+   {
+    "name": "Ski Apache",
+    "status": "~Nov 28"
+   },
+   {
+    "name": "Angel Fire",
+    "status": "~Dec 11"
+   }
+  ],
+  "ski_note": "Sipapu reports 7 inches of new snow in the past week and 15 inches for the season. Resort base depths include man-made snow. Dates with ~ are projected and may change.",
+  "panels": [
+   {
+    "kicker": "Saturday",
+    "title": "Strong winds over the highlands",
+    "paras": [
+     "A fast-moving system crosses northern New Mexico Saturday while colder air pushes in from the northeast. NWS Albuquerque expects gusts of 35 to 55 mph Saturday afternoon, highest over the central highlands and the central mountain chain.",
+     "Winds stay strong in the northeast through Saturday night. Expect difficult driving for high-profile vehicles, and some weak trees could come down."
+    ]
+   },
+   {
+    "kicker": "Cold nights",
+    "title": "Teens in the high valleys",
+    "paras": [
+     "Skies clear and winds ease Saturday night. NWS has Angel Fire near 13 and Red River near 18, and enclosed valleys could run colder than forecast if winds go calm.",
+     "Angel Fire dropped to about 17 this morning. Protect exposed pipes in unheated buildings."
+    ]
+   },
+   {
+    "kicker": "Looking ahead",
+    "title": "Pacific storm midweek",
+    "paras": [
+     "NWS Albuquerque expects a Pacific low to bring measurable rain and snow to much of western and central New Mexico Wednesday and Thursday, with lighter amounts east of the mountains.",
+     "The Climate Prediction Center favors wetter than normal conditions for the Southwest Dec 2 to 10. El Niño is very strong, which tends to favor better snow odds in northern New Mexico as winter goes on."
+    ]
+   }
+  ],
+  "sources": "NWS Albuquerque forecast and discussion, Angel Fire airport observations, NRCS SNOTEL, NMRoads, OnTheSnow, Sipapu snow report, NOAA Climate Prediction Center.",
+  "town_title": "Mountain towns",
+  "tables": [
+   {
+    "kicker": "Travel",
+    "title": "Travel routes",
+    "cols": [
+     "Route",
+     "Conditions"
+    ],
+    "rows": [
+     [
+      {
+       "name": "I-25 north",
+       "sub": "Raton Pass – Las Vegas"
+      },
+      "No weather issues listed"
+     ],
+     [
+      {
+       "name": "I-25 central",
+       "sub": "Las Vegas – Santa Fe – Albuquerque"
+      },
+      "No weather issues listed"
+     ],
+     [
+      {
+       "name": "I-25 south",
+       "sub": "Albuquerque – Las Cruces"
+      },
+      "No weather issues listed"
+     ],
+     [
+      {
+       "name": "I-40 east",
+       "sub": "Texas line – Clines Corners – Albuquerque"
+      },
+      "No weather issues listed"
+     ],
+     [
+      {
+       "name": "I-40 west",
+       "sub": "Albuquerque – Gallup – Arizona line"
+      },
+      "No weather issues listed"
+     ],
+     [
+      {
+       "name": "Mountain highways",
+       "sub": "NM-518, US-64, NM-434, NM-38, NM-75, NM-150, NM-68"
+      },
+      "No listings for NM-518, US-64, NM-434, NM-38, NM-75, NM-150 or NM-68. The earlier icy listing on US-64 east of Taos has cleared."
+     ]
+    ],
+    "key_rows": [],
+    "note": "No weather problems are listed on I-25 or I-40. Strong crosswinds are likely Saturday afternoon near Clines Corners and in the northeast highlands. Check nmroads.com before leaving."
+   }
+  ]
+ }
 }
